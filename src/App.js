@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Statistics from './components/Statistics/Statistics';
 import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
-import Container from './components/Container/Container';
+import Section from './components/Section/Section';
 import Notification from './components/Notification/Notification';
 
 class App extends Component {
@@ -35,13 +35,13 @@ class App extends Component {
 
     return (
       <div>
-        <Container title="Please leave feedback">
+        <Section title="Please leave feedback">
           <FeedbackOptions
             options={arrOptions}
             onLeaveFeedback={this.handleFeedback}
           />
-        </Container>
-        <Container title="Statistics">
+        </Section>
+        <Section title="Statistics">
           {this.countTotalFeedback() === 0 ? (
             <Notification message="No feedback given" />
           ) : (
@@ -53,7 +53,7 @@ class App extends Component {
               positivePercentage={this.countPositiveFeedbackPercentage()}
             ></Statistics>
           )}
-        </Container>
+        </Section>
       </div>
     );
   }

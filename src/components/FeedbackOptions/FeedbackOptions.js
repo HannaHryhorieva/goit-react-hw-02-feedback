@@ -1,5 +1,6 @@
-/* <FeedbackOptions options={} onLeaveFeedback={}>. */
+import PropTypes from 'prop-types';
 import shortid from 'shortid';
+
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <div>
@@ -17,3 +18,7 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
     </div>
   );
 }
+FeedbackOptions.propTypes = {
+  options: PropTypes.array,
+  onLeaveFeedback: PropTypes.func,
+};
